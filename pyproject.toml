@@ -1,0 +1,24 @@
+[project]
+name = "planet_fitness_ha"
+dynamic = ["version"]  # the version is in custom_components/planet_fitness/manifest.json
+description = "Planet Fitness US (Unofficial): a Home Assistant integration for crowd levels, check-ins and membership billing"
+requires-python = ">=3.14"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["entity_defaults: entities keep their real enabled-by-default setting (tests turn all on otherwise)"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "ASYNC", "PL"]
+ignore = ["PLR0913", "PLR2004", "PLR0911", "PLR0912", "RUF012"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["custom_components"]
+force-sort-within-sections = true
+combine-as-imports = true

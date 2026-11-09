@@ -1,0 +1,18 @@
+{
+  "domain": "planet_fitness",
+  "name": "Planet Fitness US (Unofficial)",
+  "categories": [
+    "health_wellbeing",
+    "local_services"
+  ],
+  "codeowners": [
+    "@sharpsan"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/sharpsan/planet_fitness_ha",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/sharpsan/planet_fitness_ha/issues",
+  "requirements": [],
+  "version": "0.2.0"
+}

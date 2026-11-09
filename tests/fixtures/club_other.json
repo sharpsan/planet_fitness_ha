@@ -1,0 +1,116 @@
+{
+  "pfxClubId": "pfx:clubs:00000000-0000-4000-8000-000000000002",
+  "posClubId": "0000",
+  "pfClubId": "9999",
+  "name": "Example North",
+  "status": "OPEN",
+  "slug": "example-north-mo",
+  "posSystem": "EXAMPLE",
+  "franchiseGroup": "Example Fitness Group",
+  "telephone": "000-000-0000",
+  "location": {
+    "latitude": "39.1",
+    "longitude": "-94.5",
+    "address": {
+      "line1": "1 Example Way",
+      "city": "Northtown",
+      "stateCode": "MO",
+      "postalCode": "00000",
+      "countryCode": "US"
+    }
+  },
+  "content": {
+    "language": "en",
+    "showDaypass": true,
+    "announcements": {},
+    "offerFinePrint": {
+      "basic": "",
+      "premium": "",
+      "prepaid": ""
+    },
+    "holidayHours": []
+  },
+  "links": {
+    "offersPage": {
+      "en": "https://example.invalid/en",
+      "es": "https://example.invalid/es"
+    }
+  },
+  "timezone": "America/Chicago",
+  "amenities": {
+    "basic": [
+      "Cardio"
+    ],
+    "premium": [
+      "Massage Chairs"
+    ],
+    "digital": [
+      "App"
+    ],
+    "basicPlus": [
+      "Cardio"
+    ],
+    "premiumPlus": [
+      "Tanning"
+    ]
+  },
+  "occupancyPercentage": 41,
+  "hours": {
+    "description": "Mon-Fri 5am-11pm, Sat-Sun 7am-7pm",
+    "hours": [
+      {
+        "dayOfWeek": 1,
+        "opens": "05:00",
+        "closes": "23:00",
+        "status": "open"
+      },
+      {
+        "dayOfWeek": 2,
+        "opens": "05:00",
+        "closes": "23:00",
+        "status": "open"
+      },
+      {
+        "dayOfWeek": 3,
+        "opens": "05:00",
+        "closes": "23:00",
+        "status": "open"
+      },
+      {
+        "dayOfWeek": 4,
+        "opens": "05:00",
+        "closes": "23:00",
+        "status": "open"
+      },
+      {
+        "dayOfWeek": 5,
+        "opens": "05:00",
+        "closes": "23:00",
+        "status": "open"
+      },
+      {
+        "dayOfWeek": 6,
+        "opens": "07:00",
+        "closes": "19:00",
+        "status": "open"
+      },
+      {
+        "dayOfWeek": 7,
+        "opens": "07:00",
+        "closes": "19:00",
+        "status": "open"
+      }
+    ]
+  },
+  "eligibility": {
+    "minorsAllowed": true,
+    "minorMinimumAge": 13,
+    "minorMaximumAge": 17
+  },
+  "orderedAmenities": [
+    {
+      "code": "CARDIO",
+      "isNew": false
+    }
+  ]
+}

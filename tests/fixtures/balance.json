@@ -1,0 +1,9 @@
+{
+  "payableBalance": 0.0,
+  "processingBalance": 0,
+  "inDraftPeriod": false,
+  "paymentSubmittedNotice": null,
+  "payableInvoices": [],
+  "processingInvoices": null,
+  "isOverdue": false
+}

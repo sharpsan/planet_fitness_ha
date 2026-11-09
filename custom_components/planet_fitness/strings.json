@@ -1,0 +1,266 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Planet Fitness",
+        "description": "Enter the email address you use for the Planet Fitness app. Planet Fitness will email you a sign-in code.",
+        "data": {
+          "email": "Email"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to Planet Fitness again",
+        "description": "Your Planet Fitness sign-in has expired. Enter your email to get a new sign-in code.",
+        "data": {
+          "email": "Email"
+        }
+      },
+      "code": {
+        "title": "Enter your sign-in code",
+        "description": "Planet Fitness sent a code to {email}. It can take a minute to arrive.",
+        "data": {
+          "code": "Code"
+        }
+      }
+    },
+    "error": {
+      "invalid_email": "Planet Fitness didn't accept that email address.",
+      "invalid_code": "That code is wrong or has expired. Check the latest email and try again.",
+      "invalid_auth": "Planet Fitness rejected the sign-in.",
+      "unexpected_page": "The Planet Fitness sign-in page didn't respond as expected. It may have changed; please open an issue.",
+      "rate_limited": "Planet Fitness is limiting requests. Try again later.",
+      "cannot_connect": "Couldn't reach Planet Fitness."
+    },
+    "abort": {
+      "already_configured": "This Planet Fitness account is already set up.",
+      "reauth_successful": "Signed in again.",
+      "wrong_account": "That's a different Planet Fitness account than the one set up here.",
+      "unexpected_page": "Planet Fitness didn't say which account signed in. Please open an issue."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Planet Fitness options",
+        "data": {
+          "low_threshold": "Moderate from",
+          "high_threshold": "High from",
+          "busier_factor": "Busier than usual at",
+          "visit_minutes": "Visit length"
+        },
+        "data_description": {
+          "low_threshold": "Crowd level (%) where Crowd status changes from Low to Moderate.",
+          "high_threshold": "Crowd level (%) where Crowd status changes from Moderate to High.",
+          "busier_factor": "Busier than usual turns on when the crowd is more than this many times the typical crowd for the hour, and more than 5 points above it.",
+          "visit_minutes": "How long each check-in lasts in the Visits calendar, and how long a visit under way at startup still counts for the Check-in event."
+        }
+      }
+    },
+    "error": {
+      "high_not_above_low": "Must be higher than Moderate from."
+    }
+  },
+  "config_subentries": {
+    "club": {
+      "initiate_flow": {
+        "user": "Add club"
+      },
+      "entry_type": "Club",
+      "step": {
+        "user": {
+          "title": "Add a club",
+          "submit": "Search",
+          "description": "Enter a ZIP code, or leave it blank and move the pin to where you want to look. The nearest clubs are listed next.",
+          "data": {
+            "zip_code": "ZIP code",
+            "location": "Search near"
+          }
+        },
+        "pick": {
+          "title": "Pick a club",
+          "data": {
+            "club_id": "Club"
+          }
+        }
+      },
+      "error": {
+        "no_clubs": "No other clubs found.",
+        "invalid_zip": "Enter a 5-digit ZIP code.",
+        "unknown_zip": "That ZIP code wasn't found.",
+        "cannot_connect": "Couldn't reach Planet Fitness.",
+        "rate_limited": "Planet Fitness is limiting requests. Try again later.",
+        "invalid_auth": "Planet Fitness rejected the sign-in."
+      },
+      "abort": {
+        "not_loaded": "Planet Fitness isn't loaded right now. Try again once it is.",
+        "already_configured": "That club is already added."
+      }
+    }
+  },
+  "device": {
+    "membership": {
+      "name": "Planet Fitness membership"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "crowd_level": {
+        "name": "Crowd level"
+      },
+      "estimated_people": {
+        "name": "Estimated people"
+      },
+      "capacity": {
+        "name": "Capacity"
+      },
+      "crowd_status": {
+        "name": "Crowd status",
+        "state": {
+          "low": "Low",
+          "moderate": "Moderate",
+          "high": "High"
+        }
+      },
+      "typical_crowd": {
+        "name": "Typical crowd now",
+        "state_attributes": {
+          "today": {
+            "name": "Today by hour"
+          }
+        }
+      },
+      "quietest_time_today": {
+        "name": "Quietest time today"
+      },
+      "crowd_trend": {
+        "name": "Crowd trend",
+        "state": {
+          "rising": "Rising",
+          "steady": "Steady",
+          "falling": "Falling"
+        }
+      },
+      "next_closing": {
+        "name": "Next closing"
+      },
+      "next_opening": {
+        "name": "Next opening"
+      },
+      "last_check_in": {
+        "name": "Last check-in",
+        "state_attributes": {
+          "club": {
+            "name": "Club"
+          }
+        }
+      },
+      "check_ins_this_week": {
+        "name": "Check-ins this week"
+      },
+      "check_ins_this_month": {
+        "name": "Check-ins this month"
+      },
+      "check_ins_this_year": {
+        "name": "Check-ins this year"
+      },
+      "total_check_ins": {
+        "name": "Total check-ins"
+      },
+      "weekly_streak": {
+        "name": "Weekly streak"
+      },
+      "member_since": {
+        "name": "Member since"
+      },
+      "next_payment_amount": {
+        "name": "Next payment amount"
+      },
+      "next_payment_date": {
+        "name": "Next payment date"
+      },
+      "monthly_fee": {
+        "name": "Monthly fee",
+        "state_attributes": {
+          "billing_day": {
+            "name": "Billing day"
+          }
+        }
+      },
+      "annual_fee": {
+        "name": "Annual fee",
+        "state_attributes": {
+          "next_billing_date": {
+            "name": "Next billing date"
+          }
+        }
+      },
+      "balance_due": {
+        "name": "Balance due"
+      }
+    },
+    "binary_sensor": {
+      "open": {
+        "name": "Open",
+        "state": {
+          "on": "Open",
+          "off": "Closed"
+        },
+        "state_attributes": {
+          "hours": {
+            "name": "Hours"
+          },
+          "upcoming_holidays": {
+            "name": "Upcoming holidays"
+          }
+        }
+      },
+      "busier_than_usual": {
+        "name": "Busier than usual",
+        "state": {
+          "on": "Yes",
+          "off": "No"
+        }
+      },
+      "checked_in": {
+        "name": "Checked in",
+        "state": {
+          "on": "Yes",
+          "off": "No"
+        }
+      },
+      "checked_in_today": {
+        "name": "Checked in today",
+        "state": {
+          "on": "Yes",
+          "off": "No"
+        }
+      },
+      "payment_overdue": {
+        "name": "Payment overdue"
+      }
+    },
+    "event": {
+      "check_in": {
+        "name": "Check-in",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "check_in": "Check-in"
+            }
+          },
+          "club": {
+            "name": "Club"
+          },
+          "check_in_time": {
+            "name": "Check-in time"
+          }
+        }
+      }
+    },
+    "calendar": {
+      "visits": {
+        "name": "Visits"
+      }
+    }
+  }
+}

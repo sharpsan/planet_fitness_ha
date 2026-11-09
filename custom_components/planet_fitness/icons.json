@@ -1,0 +1,46 @@
+{
+  "entity": {
+    "sensor": {
+      "crowd_level": { "default": "mdi:account-group" },
+      "estimated_people": { "default": "mdi:account-multiple" },
+      "capacity": { "default": "mdi:account-multiple-check" },
+      "crowd_status": {
+        "default": "mdi:gauge",
+        "state": { "low": "mdi:gauge-empty", "moderate": "mdi:gauge", "high": "mdi:gauge-full" }
+      },
+      "typical_crowd": { "default": "mdi:chart-bell-curve" },
+      "quietest_time_today": { "default": "mdi:clock-check-outline" },
+      "crowd_trend": {
+        "default": "mdi:trending-neutral",
+        "state": { "rising": "mdi:trending-up", "steady": "mdi:trending-neutral", "falling": "mdi:trending-down" }
+      },
+      "next_closing": { "default": "mdi:store-clock" },
+      "next_opening": { "default": "mdi:store-clock-outline" },
+      "last_check_in": { "default": "mdi:dumbbell" },
+      "check_ins_this_week": { "default": "mdi:calendar-week" },
+      "check_ins_this_month": { "default": "mdi:calendar-month" },
+      "check_ins_this_year": { "default": "mdi:calendar-range" },
+      "total_check_ins": { "default": "mdi:counter" },
+      "weekly_streak": { "default": "mdi:fire" },
+      "member_since": { "default": "mdi:card-account-details" },
+      "next_payment_amount": { "default": "mdi:cash-clock" },
+      "next_payment_date": { "default": "mdi:calendar-clock" },
+      "monthly_fee": { "default": "mdi:cash" },
+      "annual_fee": { "default": "mdi:cash-multiple" },
+      "balance_due": { "default": "mdi:cash-register" }
+    },
+    "binary_sensor": {
+      "open": { "default": "mdi:store-off", "state": { "on": "mdi:store" } },
+      "busier_than_usual": { "default": "mdi:account-group-outline", "state": { "on": "mdi:account-alert" } },
+      "checked_in": { "default": "mdi:dumbbell", "state": { "on": "mdi:weight-lifter" } },
+      "checked_in_today": { "default": "mdi:calendar-blank", "state": { "on": "mdi:calendar-check" } },
+      "payment_overdue": { "default": "mdi:credit-card-check-outline", "state": { "on": "mdi:credit-card-clock-outline" } }
+    },
+    "event": {
+      "check_in": { "default": "mdi:login" }
+    },
+    "calendar": {
+      "visits": { "default": "mdi:calendar-account" }
+    }
+  }
+}

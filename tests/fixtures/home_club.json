@@ -1,0 +1,177 @@
+{
+  "pfxClubId": "pfx:clubs:00000000-0000-4000-8000-000000000001",
+  "posClubId": "0000",
+  "pfClubId": "9999",
+  "name": "Example Central",
+  "status": "OPEN",
+  "slug": "example-central-mo",
+  "posSystem": "EXAMPLE",
+  "franchiseGroup": "Example Fitness Group",
+  "telephone": "000-000-0000",
+  "location": {
+    "latitude": "39.0",
+    "longitude": "-94.5",
+    "address": {
+      "line1": "1 Example Way",
+      "city": "Example City",
+      "stateCode": "MO",
+      "postalCode": "00000",
+      "countryCode": "US"
+    }
+  },
+  "content": {
+    "language": "en",
+    "showDaypass": true,
+    "announcements": {},
+    "offerFinePrint": {
+      "basic": "",
+      "premium": "",
+      "prepaid": ""
+    },
+    "holidayHours": [
+      {
+        "order": 0,
+        "holidayName": "Easter",
+        "line1": "04/04/2026: Closes at 8:00 PM",
+        "line2": "04/05/2026: Closed",
+        "line3": "04/06/2026: Reopens at 6:00 AM",
+        "dates": [
+          {
+            "date": "2026-04-04",
+            "action": "Closes at",
+            "status": "open",
+            "opens": "00:00",
+            "closes": "20:00"
+          },
+          {
+            "date": "2026-04-05",
+            "action": "Closed",
+            "status": "closed",
+            "opens": null,
+            "closes": null
+          },
+          {
+            "date": "2026-04-06",
+            "action": "Reopens at",
+            "status": "open",
+            "opens": "06:00",
+            "closes": "24:00"
+          }
+        ]
+      },
+      {
+        "order": 1,
+        "holidayName": "Thanksgiving",
+        "line1": "11/25/2026: Closes at 8:00 PM",
+        "line2": "11/26/2026: Closed",
+        "line3": "11/27/2026: Reopens at 6:00 AM",
+        "dates": [
+          {
+            "date": "2026-11-25",
+            "action": "Closes at",
+            "status": "open",
+            "opens": "00:00",
+            "closes": "20:00"
+          },
+          {
+            "date": "2026-11-26",
+            "action": "Closed",
+            "status": "closed",
+            "opens": null,
+            "closes": null
+          },
+          {
+            "date": "2026-11-27",
+            "action": "Reopens at",
+            "status": "open",
+            "opens": "06:00",
+            "closes": "24:00"
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "offersPage": {
+      "en": "https://example.invalid/en",
+      "es": "https://example.invalid/es"
+    }
+  },
+  "timezone": "America/Chicago",
+  "amenities": {
+    "basic": [
+      "Cardio"
+    ],
+    "premium": [
+      "Massage Chairs"
+    ],
+    "digital": [
+      "App"
+    ],
+    "basicPlus": [
+      "Cardio"
+    ],
+    "premiumPlus": [
+      "Tanning"
+    ]
+  },
+  "occupancyPercentage": 23,
+  "hours": {
+    "description": "Open 24/7",
+    "hours": [
+      {
+        "dayOfWeek": 1,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      },
+      {
+        "dayOfWeek": 2,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      },
+      {
+        "dayOfWeek": 3,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      },
+      {
+        "dayOfWeek": 4,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      },
+      {
+        "dayOfWeek": 5,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      },
+      {
+        "dayOfWeek": 6,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      },
+      {
+        "dayOfWeek": 7,
+        "opens": "00:00",
+        "closes": "24:00",
+        "status": "24hrs"
+      }
+    ]
+  },
+  "eligibility": {
+    "minorsAllowed": true,
+    "minorMinimumAge": 13,
+    "minorMaximumAge": 17
+  },
+  "orderedAmenities": [
+    {
+      "code": "CARDIO",
+      "isNew": false
+    }
+  ]
+}

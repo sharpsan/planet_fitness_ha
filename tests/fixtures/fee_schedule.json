@@ -1,0 +1,17 @@
+{
+  "monthlyFee": {
+    "amount": 15.0,
+    "billingMonth": null,
+    "billingDay": 5
+  },
+  "annualFee": {
+    "amount": 49.0,
+    "billingMonth": 3,
+    "billingDay": 15
+  },
+  "nextPayment": {
+    "amount": 15.0,
+    "date": "2026-12-05",
+    "type": null
+  }
+}

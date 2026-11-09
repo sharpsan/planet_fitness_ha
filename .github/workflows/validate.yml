@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 6 * * *"  # daily, to catch Home Assistant changes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hassfest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: home-assistant/actions/hassfest@master
+
+  hacs:
+    # The HACS action can only validate public repositories.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hacs/action@main
+        with:
+          category: integration
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - run: pip install -r requirements_test.txt
+      - run: ruff check custom_components tests && ruff format --check custom_components tests
+      - run: pytest -q
+
+  # A push to main with a manifest version that has no tag yet is a release:
+  # tag it vX.Y.Z and publish a GitHub release (which the Marketplace and HACS
+  # offer as an update)
+  # whose notes are the commit subjects since the previous release.
+  release:
+    needs: [hassfest, tests, hacs]
+    # hacs is skipped while the repo is private; anything else must pass.
+    if: >-
+      github.event_name == 'push' && github.ref == 'refs/heads/main' && !cancelled()
+      && needs.hassfest.result == 'success' && needs.tests.result == 'success'
+      && (needs.hacs.result == 'success' || needs.hacs.result == 'skipped')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: release
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Tag and publish a new version
+        shell: bash  # with pipefail
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          version=$(jq -r .version custom_components/planet_fitness/manifest.json)
+          tag="v$version"
+          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            echo "$tag is already released; nothing to do."
+            exit 0
+          fi
+          previous=$(git describe --tags --abbrev=0 --match 'v[0-9]*' 2>/dev/null || true)
+          if [ -n "$previous" ] && [ "$(printf '%s\n' "${previous#v}" "$version" | sort -V | tail -n1)" != "$version" ]; then
+            echo "::error::manifest.json version $version is not newer than $previous"
+            exit 1
+          fi
+          {
+            echo "## What's changed"
+            echo
+            # Version bumps ("Release 1.2.3") aren't changes worth listing.
+            git log --no-merges --format='- %s' "${previous:+$previous..}HEAD" \
+              | { grep -vE '^- Release [0-9]+\.[0-9]+\.[0-9]+$' || true; }
+            if [ -n "$previous" ]; then
+              echo
+              echo "**Full changelog:** https://github.com/$REPO/compare/$previous...$tag"
+            fi
+          } > notes.md
+          cat notes.md
+          gh release create "$tag" --target "$GITHUB_SHA" --title "$tag" --notes-file notes.md

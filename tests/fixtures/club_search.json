@@ -1,0 +1,109 @@
+{
+  "clubs": [
+    {
+      "pfxClubId": "pfx:clubs:00000000-0000-4000-8000-000000000001",
+      "posClubId": "0000",
+      "pfClubId": "9999",
+      "name": "Example Central",
+      "status": "OPEN",
+      "slug": "slug-1",
+      "posSystem": "EXAMPLE",
+      "franchiseGroup": "Example Fitness Group",
+      "telephone": "000-000-0000",
+      "location": {
+        "latitude": "39.01",
+        "longitude": "-94.5",
+        "address": {
+          "line1": "1 Example Way",
+          "city": "Example City",
+          "stateCode": "MO",
+          "postalCode": "00000",
+          "countryCode": "US"
+        }
+      },
+      "content": {
+        "language": "en",
+        "showDaypass": true,
+        "announcements": {}
+      },
+      "links": {
+        "offersPage": {
+          "en": "https://example.invalid/en",
+          "es": "https://example.invalid/es"
+        }
+      },
+      "timezone": "America/Chicago",
+      "distance": "0.0"
+    },
+    {
+      "pfxClubId": "pfx:clubs:00000000-0000-4000-8000-000000000002",
+      "posClubId": "0000",
+      "pfClubId": "9999",
+      "name": "Example North",
+      "status": "OPEN",
+      "slug": "slug-2",
+      "posSystem": "EXAMPLE",
+      "franchiseGroup": "Example Fitness Group",
+      "telephone": "000-000-0000",
+      "location": {
+        "latitude": "39.02",
+        "longitude": "-94.5",
+        "address": {
+          "line1": "1 Example Way",
+          "city": "Northtown",
+          "stateCode": "MO",
+          "postalCode": "00000",
+          "countryCode": "US"
+        }
+      },
+      "content": {
+        "language": "en",
+        "showDaypass": true,
+        "announcements": {}
+      },
+      "links": {
+        "offersPage": {
+          "en": "https://example.invalid/en",
+          "es": "https://example.invalid/es"
+        }
+      },
+      "timezone": "America/Chicago",
+      "distance": "3400.0"
+    },
+    {
+      "pfxClubId": "pfx:clubs:00000000-0000-4000-8000-000000000003",
+      "posClubId": "0000",
+      "pfClubId": "9999",
+      "name": "Example South",
+      "status": "OPEN",
+      "slug": "slug-3",
+      "posSystem": "EXAMPLE",
+      "franchiseGroup": "Example Fitness Group",
+      "telephone": "000-000-0000",
+      "location": {
+        "latitude": "39.03",
+        "longitude": "-94.5",
+        "address": {
+          "line1": "1 Example Way",
+          "city": "Southville",
+          "stateCode": "MO",
+          "postalCode": "00000",
+          "countryCode": "US"
+        }
+      },
+      "content": {
+        "language": "en",
+        "showDaypass": true,
+        "announcements": {}
+      },
+      "links": {
+        "offersPage": {
+          "en": "https://example.invalid/en",
+          "es": "https://example.invalid/es"
+        }
+      },
+      "timezone": "America/Chicago",
+      "distance": "12900.0"
+    }
+  ]
+}
